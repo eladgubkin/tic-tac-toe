@@ -1,0 +1,152 @@
+
+.tictactoe {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.tictactoe-square {
+  padding: 0;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  vertical-align: middle;
+}
+
+.tictactoe-square:nth-child(-n+6) {
+  border-bottom: 7px solid #1EA092;
+}
+
+.tictactoe-square:not(:nth-child(3n)) {
+  border-right: 7px solid #1EA092;
+}
+
+.tictactoe-x {
+  margin-top: 10px;
+  background: #545454;
+  height: 60px;
+  position: relative;
+  width: 5px;
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+.tictactoe-x:before {
+  background: #545454;
+  content: "";
+  height: 5px;
+  left: -27px;
+  position: absolute;
+  top: 28px;
+  width: 60px;
+}
+
+.tictactoe-o {
+  margin-top: 10px;
+  display: inline-block;
+  border: 6px solid #F2EBD4;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+}
+
+.tictactoe-x-winner {
+  background: #545454;
+  height: 10px;
+  width: 100%;
+}
+
+@keyframes winAnimationRow {
+  from {
+    width: 0%; 
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes winAnimationColumn {
+  from {
+    height: 0%; 
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes winAnimationDiagonal {
+  from {
+    height: 0%; 
+  }
+
+  to {
+    height: 125%;
+  }
+}
+
+.tictactoe-winner:before {
+  content: "";
+  position: absolute;
+  animation-duration: 0.5s;
+}
+
+.tictactoe-winner-diagonal:before {
+  width: 7px;
+  height: 125%;
+  transform: rotate(-45deg);
+  left: 122px;
+  top: -33px;
+}
+
+.tictactoe-winner-reverse-diagonal:before {
+  width: 7px;
+  height: 125%;
+  transform: rotate(45deg);
+  left: 122px;
+  top: -28px;
+}
+
+.tictactoe-winner-row:before {
+  height: 7px;
+  width: 100%;
+  animation-name: winAnimationRow;
+}
+
+.tictactoe-winner-row-0:before {
+  margin-top: 38px;
+}
+
+.tictactoe-winner-row-1:before {
+  margin-top: 123px;
+}
+
+.tictactoe-winner-row-2:before {
+  margin-top: 210px;
+}
+
+.tictactoe-winner-column:before {
+  width: 7px;
+  height: 100%;
+  animation-name: winAnimationColumn;
+}
+
+.tictactoe-winner-column-0:before {
+  margin-left: 38px;
+}
+
+.tictactoe-winner-column-1:before {
+  margin-left: 123px;
+}
+
+.tictactoe-winner-column-2:before {
+  margin-left: 210px;
+}
+
+.tictactoe-winner-x:before {
+  background-color: #545454;
+}
+
+.tictactoe-winner-o:before {
+  background-color: #F2EBD4;
+}
