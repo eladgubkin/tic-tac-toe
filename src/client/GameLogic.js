@@ -21,7 +21,7 @@ function checkRowWinner(board) {
       return { winner: 'x', index };
     } else if (oCount === 3) {
       return { winner: 'o', index };
-    } 
+    }
   }
 }
 
@@ -45,25 +45,21 @@ function checkDiagonalWinner(board) {
     return 'x';
   } else if (oCount === 3) {
     return 'o';
-  } 
+  }
 }
 
 function checkReverseDiagonalWinner(board) {
-  if (board[0][2] === 'X' &&
-      board[1][1] === 'X' &&
-      board[2][0] === 'X') {
+  if (board[0][2] === 'X' && board[1][1] === 'X' && board[2][0] === 'X') {
     return 'x';
   }
 
-  if (board[0][2] === 'O' &&
-      board[1][1] === 'O' &&
-      board[2][0] === 'O') {
+  if (board[0][2] === 'O' && board[1][1] === 'O' && board[2][0] === 'O') {
     return 'o';
   }
 }
 
 function transpose(board) {
-  const result = [ [], [], [] ];
+  const result = [[], [], []];
 
   for (let row = 0; row < 3; row++) {
     for (let column = 0; column < 3; column++) {
@@ -97,4 +93,3 @@ export function checkWinner(board) {
 
   return '';
 }
-

@@ -1,4 +1,3 @@
-
 .tictactoe {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -12,12 +11,12 @@
   vertical-align: middle;
 }
 
-.tictactoe-square:nth-child(-n+6) {
-  border-bottom: 7px solid #1EA092;
+.tictactoe-square:nth-child(-n + 6) {
+  border-bottom: 7px solid #1ea092;
 }
 
 .tictactoe-square:not(:nth-child(3n)) {
-  border-right: 7px solid #1EA092;
+  border-right: 7px solid #1ea092;
 }
 
 .tictactoe-x {
@@ -32,7 +31,7 @@
 
 .tictactoe-x:before {
   background: #545454;
-  content: "";
+  content: '';
   height: 5px;
   left: -27px;
   position: absolute;
@@ -43,7 +42,7 @@
 .tictactoe-o {
   margin-top: 10px;
   display: inline-block;
-  border: 6px solid #F2EBD4;
+  border: 6px solid #f2ebd4;
   width: 45px;
   height: 45px;
   border-radius: 100%;
@@ -57,7 +56,7 @@
 
 @keyframes winAnimationRow {
   from {
-    width: 0%; 
+    width: 0%;
   }
 
   to {
@@ -67,7 +66,7 @@
 
 @keyframes winAnimationColumn {
   from {
-    height: 0%; 
+    height: 0%;
   }
 
   to {
@@ -77,7 +76,7 @@
 
 @keyframes winAnimationDiagonal {
   from {
-    height: 0%; 
+    height: 0%;
   }
 
   to {
@@ -86,7 +85,7 @@
 }
 
 .tictactoe-winner:before {
-  content: "";
+  content: '';
   position: absolute;
   animation-duration: 0.5s;
 }
@@ -148,5 +147,5 @@
 }
 
 .tictactoe-winner-o:before {
-  background-color: #F2EBD4;
+  background-color: #f2ebd4;
 }

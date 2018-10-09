@@ -11,32 +11,27 @@ class TicTacToe extends Component {
 
     this.props.onSquareClicked(row, column);
   }
-  
-  renderShape(item) { 
+
+  renderShape(item) {
     if (item === '') {
       return null;
     }
 
     return (
       <div className="animated bounceIn">
-        <div className={item === 'X' ? 'tictactoe-x' : 'tictactoe-o'}>
-        </div>
+        <div className={item === 'X' ? 'tictactoe-x' : 'tictactoe-o'} />
       </div>
     );
   }
 
   render() {
-    const squares = _.flatten(this.props.board).map((item, index) => 
+    const squares = _.flatten(this.props.board).map((item, index) => (
       <div className="tictactoe-square" onClick={() => this.onSquareClicked(index)}>
         {this.renderShape(item)}
       </div>
-    );
+    ));
 
-    return (
-      <div className={`tictactoe ${checkWinner(this.props.board)}`}>
-        {squares}
-      </div>
-    );
+    return <div className={`tictactoe ${checkWinner(this.props.board)}`}>{squares}</div>;
   }
 }
 

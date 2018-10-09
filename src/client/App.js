@@ -7,13 +7,13 @@ class App extends Component {
     super();
     this.state = {
       roomId: null,
-      board: null,
+      board: null
     };
   }
 
   componentDidMount() {
     this.socket = io('/', {
-      path: '/api/socket.io',
+      path: '/api/socket.io'
     });
 
     const roomId = window.location.hash.replace('#', '');
@@ -21,32 +21,32 @@ class App extends Component {
       // Client wants to join an existing room.
       this.setState({
         ...this.state,
-        roomId,
+        roomId
       });
 
       this.socket.emit('join-room', roomId);
     } else {
       this.socket.emit('create-room');
-      this.socket.on('join-room', (roomId) => {
+      this.socket.on('join-room', roomId => {
         this.setState({
           ...this.state,
-          roomId,
-        })
+          roomId
+        });
       });
     }
 
-    this.socket.on('start-game', (board) => {
+    this.socket.on('start-game', board => {
       this.setState({
         ...this.state,
-        board,
+        board
       });
     });
 
-    this.socket.on('update-board', (board) => {
+    this.socket.on('update-board', board => {
       this.setState({
         ...this.state,
-        board,
-      })
+        board
+      });
     });
   }
 
